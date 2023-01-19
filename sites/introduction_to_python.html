@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Introduction to Python</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="introduction-to-python">Introduction to Python</h1>
+<p>Welcome to our Introduction to Python course! In this course, you will learn the basics of programming with Python, a powerful and widely-used programming language. Python is a great language for beginners, as it is easy to read and understand, but is also used by professional software developers at companies like Google and NASA.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before we get started, you will need to have a few things set up on your computer:</p>
+<ul>
+<li>A text editor, such as Visual Studio Code, Sublime Text or Atom</li>
+<li>An internet connection</li>
+<li>A Python interpreter, which you can download from the official Python website (<a href="https://www.python.org/">https://www.python.org/</a>)</li>
+</ul>
+<h2 id="course-outline">Course Outline</h2>
+<ol>
+<li>Introduction to programming concepts</li>
+<li>Basic Python syntax and data types</li>
+<li>Control structures (if/else statements, for loops, etc.)</li>
+<li>Functions and modules</li>
+<li>Working with data (lists, dictionaries, etc.)</li>
+<li>Object-oriented programming in Python</li>
+<li>Advanced topics (optional)</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<p>Throughout this course, you will find links to additional resources for further learning. We recommend you take advantage of these resources, as they will help you deepen your understanding of Python and become a more proficient programmer.</p>
+<h2 id="lets-get-started">Let's get started!</h2>
+<p>Now that you have everything set up, let's get started on your journey to learning Python. We'll begin with an overview of programming concepts, and then dive into the basics of Python syntax and data types.</p>
+<hr>
+<hr>
+<hr>
+<h2 id="1-introduction-to-programming-concepts">1. Introduction to Programming Concepts</h2>
+<p>In this section, we will cover the fundamental concepts of programming that are applicable to any programming language.</p>
+<h3 id="what-is-a-program">What is a program?</h3>
+<p>A program is a set of instructions that a computer can execute to perform a specific task. Programs are written in a programming language, which is a set of rules and conventions for expressing those instructions in a way that the computer can understand.</p>
+<h3 id="variables-and-data-types">Variables and data types</h3>
+<p>A <strong>variable</strong> is a named container that stores a value. The value can be of different types, such as a number, a string of text, or a Boolean value (true or false). The type of a value determines what kind of operations can be performed on it.</p>
+<h3 id="input-and-output">Input and output</h3>
+<p>A program can accept input from the user or from other sources, and it can produce output in various forms, such as displaying text on the screen, writing to a file, or sending data over the internet.</p>
+<h3 id="control-structures">Control structures</h3>
+<p>Control structures are used to specify the flow of execution in a program. They allow the program to make decisions (if/else statements) or repeat actions (for loops).</p>
+<h3 id="functions">Functions</h3>
+<p>A <strong>function</strong> is a reusable block of code that performs a specific task. Functions can accept input (called arguments) and return output (called a return value). Using functions can make your code more organized and easier to read and maintain.</p>
+<hr>
+<hr>
+<hr>
+<h2 id="2-basic-python-syntax-and-data-types">2. Basic Python Syntax and Data Types</h2>
+<p>In this section, we will learn the basic syntax of the Python programming language and some common data types.</p>
+<h3 id="syntax">Syntax</h3>
+<p>Python uses indentation to define blocks of code, such as the body of a function or a loop. It is important to use consistent indentation throughout your code.</p>
+<p>Python also uses colons (:) to mark the beginning of a block of code and to indicate that a statement is expected to follow.</p>
+<h3 id="data-types">Data types</h3>
+<p>Python has several built-in data types, including:</p>
+<ul>
+<li><strong>Numbers</strong>: integers (whole numbers) and floating-point numbers (numbers with a decimal point)</li>
+<li><strong>Strings</strong>: sequences of characters, enclosed in single or double quotes</li>
+<li><strong>Booleans</strong>: True or False values</li>
+<li><strong>Lists</strong>: ordered collections of values that can be of any data type</li>
+<li><strong>Dictionaries</strong>: unordered collections of key-value pairs</li>
+</ul>
+<h3 id="operators">Operators</h3>
+<p>Python provides a variety of operators for performing operations on values. Some common operators include:</p>
+<ul>
+<li>Arithmetic operators: +, -, *, /, % (modulus), // (floor division)</li>
+<li>Comparison operators: == (equal to), != (not equal to), &gt; (greater than), &lt; (less than), &gt;= (greater than or equal to), &lt;= (less than or equal to)</li>
+<li>Logical operators: and, or, not</li>
+</ul>
+<h3 id="printing-to-the-console">Printing to the console</h3>
+<p>To print a message to the console in Python, you can use the <code>print()</code> function. For example:</p>
+<pre><code class="language-python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello, World!&quot;</span>)
+</code></pre>
+<hr>
+<hr>
+<hr>
+<h2 id="3-control-structures">3. Control Structures</h2>
+<p>In this section, we will learn about control structures, which are used to control the flow of execution in a program.</p>
+<h3 id="ifelse-statements">if/else statements</h3>
+<p>An <code>if</code> statement is used to execute a block of code if a certain condition is true. An <code>else</code> clause can be used to specify an alternate block of code to be executed if the condition is false.</p>
+<p>Here is an example of an <code>if</code> statement in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">if</span> condition:
+  <span class="hljs-comment"># code to be executed if condition is true</span>
+<span class="hljs-keyword">else</span>:
+  <span class="hljs-comment"># code to be executed if condition is false</span>
+</code></pre>
+<h3 id="for-loops">For Loops</h3>
+<p>A <code>for</code> loop is used to iterate over a sequence of values (such as a list or a string). The loop will execute a block of code for each value in the sequence.</p>
+<p>Here is an example of a <code>for</code> loop in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> sequence:
+  <span class="hljs-comment"># code to be executed for each value in the sequence</span>
+</code></pre>
+<p>You can also use the range() function to specify a range of values to iterate over. For example:</p>
+<pre><code class="language-python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+  <span class="hljs-comment"># code to be executed 10 times, with i taking on the values 0 through 9</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>):
+  <span class="hljs-comment"># code to be executed 5 times, with i taking on the values 5 through 9</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>):
+  <span class="hljs-comment"># code to be executed 5 times, with i taking on the values 0, 2, 4, 6, 8</span>
+</code></pre>
+<p>You can use the enumerate() function to iterate over a sequence and also get the index of each element. For example:</p>
+<pre><code class="language-python"><span class="hljs-keyword">for</span> i, value <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(sequence):
+  <span class="hljs-comment"># code to be executed for each value in the sequence, with i being the index of the value</span>
+</code></pre>
+<hr>
+<hr>
+<hr>
+<h2 id="4-functions-and-modules">4. Functions and Modules</h2>
+<p>In this section, we will learn about functions and modules, which are used to organize and reuse code in Python.</p>
+<h3 id="functions">Functions</h3>
+<p>A <strong>function</strong> is a reusable block of code that performs a specific task. Functions can accept input (called arguments) and return output (called a return value). Using functions can make your code more organized and easier to read and maintain.</p>
+<p>Here is an example of a function in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>):
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>)
+
+greet(<span class="hljs-string">&quot;World&quot;</span>)
+</code></pre>
+<p>You can also specify default values for arguments in a function definition, so that the arguments are optional when calling the function. For example:</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name, greeting=<span class="hljs-string">&quot;Hello&quot;</span></span>):
+  <span class="hljs-built_in">print</span>(greeting + <span class="hljs-string">&quot;, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>)
+
+greet(<span class="hljs-string">&quot;World&quot;</span>) <span class="hljs-comment"># prints &quot;Hello, World!&quot;</span>
+greet(<span class="hljs-string">&quot;Universe&quot;</span>, <span class="hljs-string">&quot;Hi&quot;</span>) <span class="hljs-comment"># prints &quot;Hi, Universe!&quot;</span>
+
+</code></pre>
+<h3 id="modules">Modules</h3>
+<p>A <strong>module</strong> is a file containing Python definitions and statements, which can be imported into other Python programs. Modules can contain functions, variables, and other definitions. Using modules can help you avoid naming conflicts and make your code more organized and reusable.</p>
+<p>To import a module in Python, you can use the <code>import</code> statement. For example:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> math
+
+x = math.cos(math.pi)
+<span class="hljs-built_in">print</span>(x) <span class="hljs-comment"># prints -1.0</span>
+</code></pre>
+<p>You can also use the <strong>from</strong> statement to import specific definitions from a module, like this:</p>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> pi, cos
+
+x = cos(pi)
+<span class="hljs-built_in">print</span>(x) <span class="hljs-comment"># prints -1.0</span>
+</code></pre>
+<p>You can also use the <strong>as</strong> keyword to give a module an alias, like this:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> math <span class="hljs-keyword">as</span> m
+
+x = m.cos(m.pi)
+<span class="hljs-built_in">print</span>(x) <span class="hljs-comment"># prints -1.0</span>
+</code></pre>
+<p>You can find a list of built-in modules in Python at the official Python documentation (<a href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a>). You can also install third-party modules using a package manager like pip.</p>
+<hr>
+<hr>
+<hr>
+<h2 id="5-working-with-data">5. Working with Data</h2>
+<p>In this section, we will learn about some common data structures in Python and how to manipulate them.</p>
+<h3 id="lists">Lists</h3>
+<p>A <strong>list</strong> is an ordered collection of values that can be of any data type. Lists are created using square brackets ([]), with values separated by commas.</p>
+<p>Here is an example of a list in Python:</p>
+<pre><code class="language-python">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+words = [<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]
+mixed = [<span class="hljs-number">1</span>, <span class="hljs-string">&quot;two&quot;</span>, <span class="hljs-number">3.0</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]]
+</code></pre>
+<p>You can access the elements of a list using an index, which starts at 0 for the first element. You can also use negative indices to access elements from the end of the list.</p>
+<p>Here are some examples of list operations in Python:</p>
+<pre><code class="language-python"><span class="hljs-comment"># Accessing elements</span>
+<span class="hljs-built_in">print</span>(numbers[<span class="hljs-number">0</span>]) <span class="hljs-comment"># prints 1</span>
+<span class="hljs-built_in">print</span>(words[-<span class="hljs-number">1</span>]) <span class="hljs-comment"># prints &quot;cherry&quot;</span>
+
+<span class="hljs-comment"># Modifying elements</span>
+numbers[<span class="hljs-number">2</span>] = <span class="hljs-number">42</span>
+<span class="hljs-built_in">print</span>(numbers) <span class="hljs-comment"># prints [1, 2, 42, 4, 5]</span>
+
+<span class="hljs-comment"># Appending elements</span>
+numbers.append(<span class="hljs-number">6</span>)
+<span class="hljs-built_in">print</span>(numbers) <span class="hljs-comment"># prints [1, 2, 42, 4, 5, 6]</span>
+
+<span class="hljs-comment"># Slicing lists</span>
+<span class="hljs-built_in">print</span>(numbers[<span class="hljs-number">1</span>:<span class="hljs-number">4</span>]) <span class="hljs-comment"># prints [2, 42, 4]</span>
+<span class="hljs-built_in">print</span>(numbers[:<span class="hljs-number">3</span>]) <span class="hljs-comment"># prints [1, 2, 42]</span>
+<span class="hljs-built_in">print</span>(numbers[<span class="hljs-number">3</span>:]) <span class="hljs-comment"># prints [4, 5, 6]</span>
+<span class="hljs-built_in">print</span>(numbers[::<span class="hljs-number">2</span>]) <span class="hljs-comment"># prints [1, 42, 5]</span>
+
+<span class="hljs-comment"># Other list methods</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(numbers)) <span class="hljs-comment"># prints 6</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">min</span>(numbers)) <span class="hljs-comment"># prints 1</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">max</span>(numbers)) <span class="hljs-comment"># prints 6</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">sum</span>(numbers)) <span class="hljs-comment"># prints 58</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">sum</span>(numbers[<span class="hljs-number">1</span>::<span class="hljs-number">2</span>])) <span class="hljs-comment"># prints 47</span>
+</code></pre>
+<h3 id="dictionaries">Dictionaries</h3>
+<p>A <strong>dictionary</strong> is an unordered collection of key-value pairs. Dictionaries are created using curly braces ({}), with keys and values separated by colons (:).</p>
+<p>Here is an example of a dictionary in Python:</p>
+<pre><code class="language-python">person = {<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;John Smith&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">30</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;New York&quot;</span>}
+
+<span class="hljs-comment"># Accessing values</span>
+<span class="hljs-built_in">print</span>(person[<span class="hljs-string">&quot;name&quot;</span>]) <span class="hljs-comment"># prints &quot;John Smith&quot;</span>
+
+<span class="hljs-comment"># Modifying values</span>
+person[<span class="hljs-string">&quot;age&quot;</span>] = <span class="hljs-number">31</span>
+<span class="hljs-built_in">print</span>(person) <span class="hljs-comment"># prints {&quot;name&quot;: &quot;John Smith&quot;, &quot;age&quot;: 31, &quot;city&quot;: &quot;New York&quot;}</span>
+
+<span class="hljs-comment"># Adding key-value pairs</span>
+person[<span class="hljs-string">&quot;country&quot;</span>] = <span class="hljs-string">&quot;United States&quot;</span>
+<span class="hljs-built_in">print</span>(person) <span class="hljs-comment"># prints {&quot;name&quot;: &quot;John Smith&quot;, &quot;age&quot;: 31, &quot;city&quot;: &quot;New York&quot;, &quot;country&quot;: &quot;United States&quot;}</span>
+
+<span class="hljs-comment"># Removing key-value pairs</span>
+<span class="hljs-keyword">del</span> person[<span class="hljs-string">&quot;country&quot;</span>]
+<span class="hljs-built_in">print</span>(person) <span class="hljs-comment"># prints {&quot;name&quot;: &quot;John Smith&quot;, &quot;age&quot;: 31, &quot;city&quot;: &quot;New York&quot;}</span>
+
+<span class="hljs-comment"># Other dictionary methods</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(person)) <span class="hljs-comment"># prints 3</span>
+<span class="hljs-built_in">print</span>(person.keys()) <span class="hljs-comment"># prints [&quot;name&quot;, &quot;age&quot;, &quot;city&quot;]</span>
+<span class="hljs-built_in">print</span>(person.values()) <span class="hljs-comment"># prints [&quot;John Smith&quot;, 31, &quot;New York&quot;]</span>
+<span class="hljs-built_in">print</span>(person.items()) <span class="hljs-comment"># prints [(&quot;name&quot;, &quot;John Smith&quot;), (&quot;age&quot;, 31), (&quot;city&quot;, &quot;New York&quot;)]</span>
+</code></pre>
+<h3 id="tuples">Tuples</h3>
+<p>A <strong>tuple</strong> is an immutable sequence of values, similar to a list. Tuples are created using parentheses (()), with values separated by commas.</p>
+<p>Here is an example of a tuple in Python:</p>
+<pre><code class="language-python">point = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+colors = (<span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-string">&quot;green&quot;</span>, <span class="hljs-string">&quot;blue&quot;</span>)
+
+<span class="hljs-comment"># Accessing elements</span>
+<span class="hljs-built_in">print</span>(point[<span class="hljs-number">0</span>]) <span class="hljs-comment"># prints 1</span>
+
+<span class="hljs-comment"># Modifying elements (not allowed)</span>
+<span class="hljs-comment"># point[0] = 42</span>
+
+<span class="hljs-comment"># Other tuple methods</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(point)) <span class="hljs-comment"># prints 2</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">min</span>(colors)) <span class="hljs-comment"># prints &quot;blue&quot;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">max</span>(colors)) <span class="hljs-comment"># prints &quot;red&quot;</span>
+</code></pre>
+<h3 id="sets">Sets</h3>
+<p>A <strong>set</strong> is an unordered collection of unique values. Sets are created using curly braces ({}), with values separated by commas.</p>
+<p>Here is an example of a set in Python:</p>
+<pre><code class="language-python">numbers = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>}
+<span class="hljs-built_in">print</span>(numbers) <span class="hljs-comment"># prints {1, 2, 3, 4, 5}</span>
+
+<span class="hljs-comment"># Adding elements</span>
+numbers.add(<span class="hljs-number">6</span>)
+<span class="hljs-built_in">print</span>(numbers) <span class="hljs-comment"># prints {1, 2, 3, 4, 5, 6}</span>
+
+<span class="hljs-comment"># Removing elements</span>
+numbers.remove(<span class="hljs-number">3</span>)
+<span class="hljs-built_in">print</span>(numbers) <span class="hljs-comment"># prints {1, 2, 4, 5, 6}</span>
+
+<span class="hljs-comment"># Other set methods</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(numbers)) <span class="hljs-comment"># prints 5</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-number">2</span> <span class="hljs-keyword">in</span> numbers) <span class="hljs-comment"># prints True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-number">3</span> <span class="hljs-keyword">in</span> numbers) <span class="hljs-comment"># prints False</span>
+
+<span class="hljs-comment"># Set operations</span>
+A = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}
+B = {<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>}
+
+<span class="hljs-built_in">print</span>(A | B) <span class="hljs-comment"># prints {1, 2, 3, 4, 5} (union)</span>
+<span class="hljs-built_in">print</span>(A &amp; B) <span class="hljs-comment"># prints {3} (intersection)</span>
+<span class="hljs-built_in">print</span>(A - B) <span class="hljs-comment"># prints {1, 2} (difference)</span>
+<span class="hljs-built_in">print</span>(A ^ B) <span class="hljs-comment"># prints {1, 2, 4, 5} (symmetric difference)</span>
+</code></pre>
+<hr>
+<hr>
+<hr>
+<h2 id="6-object-oriented-programming-in-python">6. Object-Oriented Programming in Python</h2>
+<p>In this section, we will learn about object-oriented programming (OOP), which is a programming paradigm based on the concept of &quot;objects&quot;.</p>
+<p>In OOP, you define &quot;classes&quot; that represent real-world objects, and you create &quot;instances&quot; of those classes to work with the objects in your code.</p>
+<h3 id="classes">Classes</h3>
+<p>A <strong>class</strong> is a blueprint for an object. It defines the attributes (properties) and behaviors (methods) of the object.</p>
+<p>Here is an example of a class in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>:
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, age</span>):
+    self.name = name
+    self.age = age
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">self</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello, my name is &quot;</span> + self.name)
+
+<span class="hljs-comment"># Creating an instance of the Person class</span>
+john = Person(<span class="hljs-string">&quot;John Smith&quot;</span>, <span class="hljs-number">30</span>)
+
+<span class="hljs-comment"># Accessing the instance&#x27;s attributes</span>
+<span class="hljs-built_in">print</span>(john.name) <span class="hljs-comment"># prints &quot;John Smith&quot;</span>
+<span class="hljs-built_in">print</span>(john.age) <span class="hljs-comment"># prints 30</span>
+
+<span class="hljs-comment"># Calling the instance&#x27;s method</span>
+john.greet() <span class="hljs-comment"># prints &quot;Hello, my name is John Smith&quot;</span>
+</code></pre>
+<h3 id="inheritance">Inheritance</h3>
+<p>You can define a class that <strong>inherits</strong> from another class, and the child class will have all the attributes and behaviors of the parent class, plus any additional attributes and behaviors that you define.</p>
+<p>This allows you to create a class hierarchy and reuse code in a more organized and efficient way.</p>
+<p>Here is an example of inheritance in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>:
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, species</span>):
+    self.name = name
+    self.species = species
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">make_sound</span>(<span class="hljs-params">self</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Some generic animal sound&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>(<span class="hljs-title class_ inherited__">Animal</span>):
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, breed</span>):
+    <span class="hljs-built_in">super</span>().__init__(name, species=<span class="hljs-string">&quot;Cat&quot;</span>) <span class="hljs-comment"># call the superclass&#x27;s __init__ method</span>
+    self.breed = breed
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">make_sound</span>(<span class="hljs-params">self</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Meow!&quot;</span>)
+
+<span class="hljs-comment"># Creating an instance of the Cat class</span>
+fluffy = Cat(<span class="hljs-string">&quot;Fluffy&quot;</span>, <span class="hljs-string">&quot;Persian&quot;</span>)
+
+<span class="hljs-comment"># Accessing the instance&#x27;s attributes (from the Animal and Cat classes)</span>
+<span class="hljs-built_in">print</span>(fluffy.name) <span class="hljs-comment"># prints &quot;Fluffy&quot;</span>
+<span class="hljs-built_in">print</span>(fluffy.species) <span class="hljs-comment"># prints &quot;Cat&quot;</span>
+<span class="hljs-built_in">print</span>(fluffy.breed) <span class="hljs-comment"># prints &quot;Persian&quot;</span>
+
+<span class="hljs-comment"># Calling the instance&#x27;s method (overrides the method in the Animal class)</span>
+fluffy.make_sound() <span class="hljs-comment"># prints &quot;Meow!&quot;</span>
+</code></pre>
+<h3 id="polymorphism">Polymorphism</h3>
+<p>In OOP, <strong>polymorphism</strong> refers to the ability of different objects to respond to the same method call in different ways.</p>
+<p>This allows you to write more flexible and reusable code, because you can define methods that work with any object that has the required attributes and behaviors, regardless of its specific class.</p>
+<p>Here is an example of polymorphism in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>:
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, species</span>):
+    self.name = name
+    self.species = species
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">make_sound</span>(<span class="hljs-params">self</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Some generic animal sound&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>(<span class="hljs-title class_ inherited__">Animal</span>):
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, breed</span>):
+    <span class="hljs-built_in">super</span>().__init__(name, species=<span class="hljs-string">&quot;Cat&quot;</span>)
+    self.breed = breed
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">make_sound</span>(<span class="hljs-params">self</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Meow!&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-title class_ inherited__">Animal</span>):
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, breed</span>):
+    <span class="hljs-built_in">super</span>().__init__(name, species=<span class="hljs-string">&quot;Dog&quot;</span>)
+    self.breed = breed
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">make_sound</span>(<span class="hljs-params">self</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Woof!&quot;</span>)
+
+<span class="hljs-comment"># Creating a list of Animal instances</span>
+animals = [Cat(<span class="hljs-string">&quot;Fluffy&quot;</span>, <span class="hljs-string">&quot;Persian&quot;</span>), Dog(<span class="hljs-string">&quot;Buddy&quot;</span>, <span class="hljs-string">&quot;Labrador&quot;</span>)]
+
+<span class="hljs-comment"># Calling the make_sound method on each instance</span>
+<span class="hljs-keyword">for</span> animal <span class="hljs-keyword">in</span> animals:
+  animal.make_sound()
+</code></pre>
+<hr>
+<hr>
+<hr>
+<h2 id="6-advanced-topics-optional">6. Advanced Topics (Optional)</h2>
+<p>In this optional section, we will cover some advanced topics in Python that you may encounter in your programming journey. These topics are not necessary for a basic understanding of Python, but they can be useful in certain situations.</p>
+<h3 id="generators">Generators</h3>
+<p>A <strong>generator</strong> is a special kind of function that returns an iterator that generates a sequence of values on the fly, instead of creating a whole list of values in memory.</p>
+<p>Generators are useful when you need to generate a large sequence of values, because they allow you to do it one value at a time, using minimal memory.</p>
+<p>Here is an example of a generator function in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">countdown</span>(<span class="hljs-params">n</span>):
+  <span class="hljs-keyword">while</span> n &gt; <span class="hljs-number">0</span>:
+    <span class="hljs-keyword">yield</span> n
+    n -= <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Creating a generator object</span>
+counter = countdown(<span class="hljs-number">5</span>)
+
+<span class="hljs-comment"># Iterating over the generator</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> counter:
+  <span class="hljs-built_in">print</span>(i)
+
+<span class="hljs-comment"># Output:</span>
+<span class="hljs-comment"># 5</span>
+<span class="hljs-comment"># 4</span>
+<span class="hljs-comment"># 3</span>
+<span class="hljs-comment"># 2</span>
+<span class="hljs-comment"># 1</span>
+</code></pre>
+<p>You can also use generators to implement infinite sequences, like this:</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">infinite_sequence</span>():
+  i = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    <span class="hljs-keyword">yield</span> i
+    i += <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Creating an infinite generator object</span>
+infinite = infinite_sequence()
+
+<span class="hljs-comment"># Iterating over the first 10 values of the generator</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+  <span class="hljs-built_in">print</span>(<span class="hljs-built_in">next</span>(infinite))
+
+<span class="hljs-comment"># Output:</span>
+<span class="hljs-comment"># 0</span>
+<span class="hljs-comment"># 1</span>
+<span class="hljs-comment"># 2</span>
+<span class="hljs-comment"># 3</span>
+<span class="hljs-comment"># 4</span>
+<span class="hljs-comment"># 5</span>
+<span class="hljs-comment"># 6</span>
+<span class="hljs-comment"># 7</span>
+<span class="hljs-comment"># 8</span>
+<span class="hljs-comment"># 9</span>
+</code></pre>
+<h3 id="decorators">Decorators</h3>
+<p>A <strong>decorator</strong> is a function that modifies the behavior of another function. You can use decorators to add extra functionality to your functions, without modifying the functions themselves.</p>
+<p>Here is an example of a decorator function in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_prefix</span>(<span class="hljs-params">prefix</span>):
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">decorator</span>(<span class="hljs-params">func</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):
+      <span class="hljs-keyword">return</span> prefix + func(*args, **kwargs)
+    <span class="hljs-keyword">return</span> wrapper
+  <span class="hljs-keyword">return</span> decorator
+
+<span class="hljs-comment"># Defining a function to decorate</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>):
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, &quot;</span> + name
+
+<span class="hljs-comment"># Decorating the function</span>
+greet = add_prefix(<span class="hljs-string">&quot;Mrs. &quot;</span>)(greet)
+
+<span class="hljs-comment"># Calling the decorated function</span>
+<span class="hljs-built_in">print</span>(greet(<span class="hljs-string">&quot;Smith&quot;</span>)) <span class="hljs-comment"># prints &quot;Mrs. Smith&quot;</span>
+</code></pre>
+<h3 id="context-managers">Context Managers</h3>
+<p>A <strong>context manager</strong> is an object that manages a context of execution, typically involving the allocation and release of resources.</p>
+<p>You can use the <code>with</code> statement to create a context, and the context manager's <code>__enter__</code> and <code>__exit__</code> methods will be called at the start and end of the context, respectively.</p>
+<p>Here is an example of a context manager class in Python:</p>
+<pre><code class="language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">File</span>:
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, filename, mode</span>):
+    self.filename = filename
+    self.mode = mode
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__enter__</span>(<span class="hljs-params">self</span>):
+    self.file = <span class="hljs-built_in">open</span>(self.filename, self.mode)
+    <span class="hljs-keyword">return</span> self.file
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__exit__</span>(<span class="hljs-params">self, <span class="hljs-built_in">type</span>, value, traceback</span>):
+    self.file.close()
+
+<span class="hljs-comment"># Using the File context manager</span>
+<span class="hljs-keyword">with</span> File(<span class="hljs-string">&quot;test.txt&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> f:
+  f.write(<span class="hljs-string">&quot;Hello, world!&quot;</span>)
+
+<span class="hljs-comment"># The file is automatically closed after the with block</span>
+</code></pre>
+<h3 id="asyncio">Asyncio</h3>
+<p>The <code>asyncio</code> module is a framework for writing asynchronous code in Python. Asynchronous code is code that can perform other tasks while waiting for blocking operations (like I/O or network requests) to complete.</p>
+<p>This allows you to write more efficient and responsive programs, because you can avoid blocking the main thread of execution while waiting for long-running tasks to finish.</p>
+<p>Here is an example of asynchronous code in Python using <code>asyncio</code>:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> asyncio
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">count_down</span>(<span class="hljs-params">n</span>):
+  <span class="hljs-keyword">while</span> n &gt; <span class="hljs-number">0</span>:
+    <span class="hljs-built_in">print</span>(n)
+    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">1</span>)
+    n -= <span class="hljs-number">1</span>
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Done!&quot;</span>)
+
+<span class="hljs-comment"># Scheduling a coroutine to run</span>
+asyncio.run(count_down(<span class="hljs-number">5</span>))
+
+<span class="hljs-comment"># Output:</span>
+<span class="hljs-comment"># 5</span>
+<span class="hljs-comment"># 4</span>
+<span class="hljs-comment"># 3</span>
+<span class="hljs-comment"># 2</span>
+<span class="hljs-comment"># 1</span>
+<span class="hljs-comment"># Done!</span>
+</code></pre>
+<h3 id="multiprocessing">Multiprocessing</h3>
+<p>The <code>multiprocessing</code> module is a Python standard library that allows you to write concurrent code using multiple processes.</p>
+<p>This can be useful when you have a CPU-bound task that you want to parallelize, or when you want to take advantage of multiple cores or CPU sockets on your machine.</p>
+<p>Here is an example of concurrent code in Python using <code>multiprocessing</code>:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> multiprocessing
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">x, y</span>):
+  <span class="hljs-keyword">return</span> x * y
+
+<span class="hljs-comment"># Creating a pool of workers</span>
+<span class="hljs-keyword">with</span> multiprocessing.Pool() <span class="hljs-keyword">as</span> pool:
+  result = pool.starmap(multiply, [(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">4</span>, <span class="hljs-number">5</span>), (<span class="hljs-number">6</span>, <span class="hljs-number">7</span>)])
+
+<span class="hljs-built_in">print</span>(result) <span class="hljs-comment"># prints [6, 20, 42]</span>
+</code></pre>
+<p>In conclusion, Python is a powerful and versatile programming language that is widely used in a variety of industries. It is easy to learn, yet powerful enough to handle complex tasks. The wide range of libraries and frameworks available make it a great choice for everything from data analysis and scientific computing to web development and machine learning. We hope that this e-book has provided a solid foundation for you to start exploring the world of Python programming. Whether you're a beginner or an experienced programmer, we encourage you to continue learning and experimenting with Python. With its growing popularity and strong community support, the opportunities for Python developers are endless.</p>
+
+        
+        
+    </body>
+    </html>

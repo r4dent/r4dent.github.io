@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DOS - Befehle</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="dos---befehle">DOS - Befehle</h1>
+<p>ASSOC Zeigt die Zuordnungen der Dateierweiterungen an oder ändert sie.</p>
+<p>AT Plant die Ausführung von Befehlen und Programmen auf einem Computer.</p>
+<p>ATTRIB Zeigt Dateiattribute an oder ändert sie.</p>
+<p>BREAK Schaltet (zusätzliche) Überwachung für STRG+C ein (ON) oder aus (OFF).</p>
+<p>CACLS Zeigt die Zugriffskontrollisten (ACL) der Dateien an oder ändert sie.</p>
+<p>CALL Ruft ein Stapelverarbeitungsprogramm von einem anderen aus auf.</p>
+<p>CD Wechselt das aktuelle Verzeichnis oder zeigt dessen Namen an.</p>
+<p>CHCP Wechselt die aktuelle Codeseite oder zeigt deren Nummer an.</p>
+<p>CHDIR Wechselt das aktuelle Verzeichnis oder zeigt dessen Namen an.</p>
+<p>CHKDSK Überprüft einen Datenträger und zeigt einen Statusbericht an.</p>
+<p>CLS Löscht den Bildschirminhalt.</p>
+<p>CMD Startet eine neue Instanz des Windows 2000-Befehlsinterpreters.</p>
+<p>COLOR Legt die Standardfarben für den Konsolenhinter- und Vordergrund fest.</p>
+<p>COMP Vergleicht den Inhalt zweier Dateien oder zweier Sätze von Dateien.</p>
+<p>COMPACT Zeigt die Komprimierung der Dateien auf NTFS-Partitionen an oder ändert sie.</p>
+<p>CONVERT Konvertiert FAT-Datenträger in NTFS. Das aktuelle Laufwerk kann nicht konvertiert werden.</p>
+<p>COPY Kopiert eine oder mehrere Dateien an eine andere Position.</p>
+<p>DATE Wechselt das eingestellte Datum oder zeigt es an.</p>
+<p>DEL Löscht eine oder mehrere Dateien.</p>
+<p>DIR Listet die Dateien und Unterverzeichnisse eines Verzeichnisses auf.</p>
+<p>DISKCOMP Vergleicht den Inhalt zweier Disketten.</p>
+<p>DISKCOPY Kopiert den Inhalt einer Diskette auf eine andere Diskette.</p>
+<p>DOSKEY Bearbeitet Befehlseingaben, ruft Befehle zurück und erstellt Makros.</p>
+<p>ECHO Zeigt Meldungen an oder schaltet die Befehlsanzeige ein/aus (ON/OFF).</p>
+<p>ENDLOCAL Beendet die Begrenzung des Gültigkeitsbereiches von Änderungen.</p>
+<p>ERASE Löscht eine oder mehrere Dateien.</p>
+<p>EXIT Beendet den Befehlsinterpreter CMD.EXE.</p>
+<p>FC Vergleicht zwei Dateien oder zwei Sätze von Dateien.</p>
+<p>FIND Sucht in einer oder mehreren Dateien nach einer Zeichenfolge.</p>
+<p>FINDSTR Sucht nach Zeichenketten in Dateien.</p>
+<p>FOR Führt einen Befehl für jede Datei eines Satzes von Dateien aus.</p>
+<p>FORMAT Formatiert einen Datenträger für die Verwendung unter Windows 2000.</p>
+<p>FTYPE Zeigt die Dateitypen an, die bei den Dateierweiterungszuordnungen verwendet werden, oder ändert sie.</p>
+<p>GOTO Setzt die Ausführung eines Stapelverarbeitungsprogramms an einer Marke fort.</p>
+<p>GRAFTABL Ermöglicht Windows 2000, im Grafikmodus einen erweiterten Zeichensatz anzuzeigen.</p>
+<p>HELP Zeigt Hilfe für Windows 2000-Befehle an.</p>
+<p>IF Verarbeitet Ausdrücke mit Bedingungen in einem Stapelverarbeitungsprogramm.</p>
+<p>LABEL Erstellt, ändert oder löscht die Bezeichnung eines Datenträgers.</p>
+<p>MD Erstellt ein Verzeichnis.</p>
+<p>MKDIR Erstellt ein Verzeichnis.Modul 122, Kap. DOS, Seite 20</p>
+<p>MODE Konfiguriert Geräte im System.</p>
+<p>MORE Zeigt Daten Seitenweise auf dem Bildschirm an.</p>
+<p>MOVE Verschiebt eine oder mehrere Dateien.</p>
+<p>PATH Legt den Suchpfad für ausführbare Dateien fest oder zeigt diesen an.</p>
+<p>PAUSE Hält die Ausführung einer Stapelverarbeitungsdatei an.</p>
+<p>POPD Wechselt zu dem Verzeichnis, das durch PUSHD gespeichert wurde.</p>
+<p>PRINT Druckt Textdateien während der Verwendung anderer MS-DOS-Befehle.</p>
+<p>PROMPT Modifiziert die Windows 2000-Eingabeaufforderung.</p>
+<p>RD Entfernt (löscht) ein Verzeichnis.</p>
+<p>RECOVER Stellt von einem beschädigten Datenträger lesbare Daten wieder her.</p>
+<p>REM Leitet Kommentare in einer Stapelverarbeitungsdatei oder in der Datei CONFIG.SYS ein.</p>
+<p>REN Benennt eine oder mehrere Dateien um.</p>
+<p>RENAME Benennt eine oder mehrere Dateien um.</p>
+<p>REPLACE Ersetzt Dateien.</p>
+<p>RMDIR Entfernt (löscht) ein Verzeichnis.</p>
+<p>SET Setzt oder entfernt Windows 2000-Umgebungsvariablen oder zeigt sie an.</p>
+<p>SETLOCAL Startet die Begrenzung des Gültigkeitsbereiches von Änderungen.</p>
+<p>SHIFT Verändert die Position ersetzbarer Parameter in einem Stapelverarbeitungsprogramm.</p>
+<p>SORT Gibt Eingabe sortiert auf Bildschirm, Datei oder anderes Gerät aus.</p>
+<p>SUBST Weist einem Pfad eine Laufwerksbezeichnung zu.</p>
+<p>START Startet ein eigenes Fenster, um das Programm auszuführen.</p>
+<p>TIME Stellt die Systemzeit ein oder zeigt sie an.</p>
+<p>TREE Zeigt die Verzeichnisstruktur eines Laufwerks oder Pfads grafisch an.</p>
+<p>TYPE Zeigt den Inhalt einer Textdatei an.</p>
+<p>VER Zeigt die Nummer der verwendeten Windows 2000-Version an.</p>
+<p>VERIFY Legt fest, ob MS-DOS überwachen soll, dass Dateien korrekt auf Datenträger geschrieben werden.</p>
+<p>VOL Zeigt die Bezeichnung und Seriennummer eines Datenträgers an.</p>
+<p>XCOPY Kopiert Dateien und Verzeichnisstrukturen</p>
+
+        
+        
+    </body>
+    </html>
