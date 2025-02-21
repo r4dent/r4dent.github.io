@@ -39,7 +39,7 @@ Simply open the HTML files in your web browser. No server required!
 
 - Built with vanilla JavaScript (no frameworks)
 - Uses Bootstrap 5 for styling
-- Responsive design works on desktop and mobile
+- Responsive design works on desktop and mobile (still to do!)
 - No external dependencies beyond Bootstrap and Bootstrap Icons
 
 ## 🌐 Browser Compatibility
