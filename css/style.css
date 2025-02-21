@@ -1,0 +1,606 @@
+/* Dark theme variables */
+:root {
+    --dark-bg: #1a1a1a;
+    --dark-secondary: #2d2d2d;
+    --accent-color: #00ff9d;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --sidebar-width: 250px;
+    --icon-size: 20px;
+    --sidebar-collapsed-width: 48px;
+    --nav-vertical-padding: 8px;
+}
+
+/* Basic layout */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    height: 48px;
+    padding: 0;
+    background-color: #141414;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    width: 265px;
+    transition: width 0.3s ease;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: #141414;
+    z-index: 1020;
+}
+
+.sidebar.collapsed {
+    width: 48px;
+}
+
+.sidebar.collapsed .nav-link span {
+    display: none;
+}
+
+/* Content positioning */
+.content {
+    position: relative;
+    margin-left: 0px;  /* sidebar width (265px) + 50px margin */
+    margin-top: 48px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.content.shifted {
+    margin-left: 0px;  /* collapsed sidebar width (48px) + 50px margin */
+}
+
+.sidebar-content {
+    padding: 1rem;
+}
+
+/* Category styles */
+.category {
+    margin-bottom: 1rem;
+}
+
+.category-header {
+    color: var(--text-primary);
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    margin-bottom: 1px;
+}
+
+.category-header:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.category-header .chevron {
+    transition: transform 0.3s ease;
+}
+
+.category-items {
+    padding: 5px 0 5px 15px;
+}
+
+.category-items .nav-link {
+    padding: 8px 15px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.category-items .nav-link:hover {
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.category-items .nav-link.active {
+    color: var(--accent-color);
+    background-color: rgba(0, 255, 157, 0.1);
+}
+
+/* Main content area */
+.content {
+    position: fixed;
+    top: 48px;
+    left: 265px;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding: 20px;
+    transition: left 0.3s ease;
+}
+
+/* Footer styles */
+.footer {
+    background: var(--dark-secondary);
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+.footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+        min-height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+/* Dark theme styles */
+.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+}
+
+/* Tool container styles */
+.tool-container {
+    background: var(--dark-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form control styles */
+.form-control, .form-select {
+    background-color: var(--dark-bg);
+    border-color: #444;
+    color: var(--text-primary);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--dark-bg);
+    border-color: var(--accent-color);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.25rem rgba(0, 255, 157, 0.25);
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+.btn-primary:hover {
+    background-color: #00cc7d;
+    border-color: #00cc7d;
+    color: var(--dark-bg);
+}
+
+/* Tool-specific styles */
+.code-output {
+    font-family: 'Courier New', monospace;
+    background-color: var(--dark-bg);
+    padding: 15px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+}
+
+/* Accessibility improvements */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Ensure collapse animation is smooth */
+.collapse {
+    transition: height 0.3s ease;
+}
+
+/* Homepage specific styles */
+.welcome-section {
+    padding: 2rem 0;
+}
+
+.welcome-section h1 {
+    color: var(--accent-color);
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-section p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.tool-container {
+    height: 100%;
+    transition: transform 0.2s ease;
+}
+
+.tool-container:hover {
+    transform: translateY(-5px);
+}
+
+.tool-container h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tool-container i {
+    margin-right: 0.5rem;
+}
+
+/* Navbar donate button */
+.navbar .btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    padding: 0.375rem 1rem;
+    margin-left: 1rem;
+}
+
+.navbar .btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+/* Alert styles */
+.alert {
+    border: none;
+    background-color: rgba(0, 255, 157, 0.1);
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.alert-info {
+    background-color: rgba(0, 255, 157, 0.1);
+    border: 1px solid rgba(0, 255, 157, 0.2);
+    border-radius: 8px;
+}
+
+.alert-info h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.alert-info p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.alert-heading {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.alert-warning .alert-heading {
+    color: #ffc107;
+}
+
+.alert ul {
+    padding-left: 1.2rem;
+}
+
+.alert ul li {
+    margin-bottom: 0.5rem;
+}
+
+.alert-link {
+    color: var(--accent-color) !important;
+}
+
+.alert-link:hover {
+    text-decoration: underline;
+}
+
+/* Icon styles */
+.category-header i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.category-items .nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Nav link styles */
+.nav-link {
+    height: 36px;
+    padding: var(--nav-vertical-padding) 14px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #adb5bd !important;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+.sidebar.collapsed .nav-link {
+    padding: var(--nav-vertical-padding) 0;
+    justify-content: center;
+}
+
+.sidebar.collapsed .nav-link i {
+    margin-right: 0;
+}
+
+/* Update icon color classes for better contrast */
+.text-primary { color: #00aaff; }
+.text-info { color: #17dfff; }
+.text-success { color: #00ff9d; }
+.text-warning { color: #ffdd00; }
+.text-danger { color: #ff4d4d; }
+.text-purple { color: #c278ff; }
+
+/* Make icons slightly larger and add spacing */
+.category-header i,
+.category-items i {
+    font-size: 1.1rem;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Hover effect for icons */
+.nav-link:hover i {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Disclaimer section styles */
+.disclaimers {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.disclaimers h4 {
+    color: #ffd700;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.disclaimers ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.disclaimers li {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.disclaimers li strong {
+    color: #ffd700;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+/* Bullet points using pseudo-element */
+.disclaimers li::before {
+    content: "•";
+    color: #ffd700;
+    position: absolute;
+    left: 0;
+}
+
+/* Specific disclaimer types */
+.disclaimers .educational-purpose,
+.disclaimers .no-warranty,
+.disclaimers .ethical-usage,
+.disclaimers .privacy,
+.disclaimers .accuracy {
+    color: #ffffff;
+}
+
+/* Handle text visibility */
+.sidebar .nav-link span,
+.sidebar .category-header span:not(.chevron) {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.sidebar.collapsed .nav-link span,
+.sidebar.collapsed .category-header span:not(.chevron) {
+    opacity: 0;
+    display: none;
+}
+
+/* Adjust icon positioning */
+.sidebar i {
+    margin-right: 10px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.sidebar.collapsed i {
+    margin-right: 0;
+}
+
+/* Update toggle button styles */
+.sidebar-toggle {
+    width: var(--sidebar-collapsed-width);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+}
+
+.sidebar-toggle i {
+    font-size: var(--icon-size);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* When sidebar is collapsed, rotate the icon */
+.sidebar.collapsed + .navbar .sidebar-toggle i {
+    transform: rotate(90deg);
+}
+
+/* Collapsed state adjustments */
+.sidebar.collapsed .nav-link {
+    padding: var(--nav-vertical-padding) 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.sidebar.collapsed .nav-link i {
+    margin-right: 0;
+}
+
+/* Container fluid adjustment */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 1rem;
+}
+
+/* Ensure navbar brand has proper spacing */
+.navbar-brand {
+    margin-left: 8px;
+}
+
+/* Keep text visible */
+.nav-link span {
+    opacity: 1;
+    visibility: visible;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Card text colors */
+.card {
+    color: #ffffff;  /* Set default text color for all content in cards */
+}
+
+.card h2 {
+    color: #00ff9d !important;  /* Mint green for headings */
+}
+
+/* Ensure text is white even with Bootstrap's default colors */
+.card p {
+    color: #ffffff !important;
+}
+
+/* Card text colors */
+.card-body {
+    color: #ffffff !important;  /* Force white text for all card content */
+}
+
+.card-body h2 {
+    color: #00ff9d !important;  /* Keep the mint green headers */
+}
+
+.card-body p {
+    color: #ffffff !important;  /* Ensure paragraphs are white */
+}
+
+/* Additional specificity if needed */
+.content .card .card-body p {
+    color: #ffffff !important;
+}
+
+/* Target card text specifically */
+.content .card {
+    color: #ffffff !important;
+}
+
+.content .card p {
+    color: #ffffff !important;
+}
+
+.content .card .card-body p {
+    color: #ffffff !important;
+}
+
+.content .card-body p {
+    color: #ffffff !important;
+}
+
+/* Keep headers mint green */
+.content .card h2 {
+    color: #00ff9d !important;
+}
+
+/* Tool container text colors */
+.tool-container {
+    color: #ffffff !important;
+}
+
+.tool-container p {
+    color: #ffffff !important;
+}
+
+.tool-container h2 {
+    color: #00ff9d !important;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnet Calculator - IT Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="sidebar-toggle">
+                <i class="bi bi-window"></i>
+            </button>
+            <a class="navbar-brand" href="/">Cyber Tools</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNav">
+                <div class="ms-auto">
+                    <a class="btn btn-primary" href="/pages/donate.html">Donate</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar"></div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1 style="color: #00ff9d;">Subnet Calculator</h1>
+        <p style="color: #adb5bd;">Calculate network details including subnet mask, network address, broadcast address and host range.</p>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="ipAddress" class="form-label text-white">IP Address</label>
+                        <input type="text" class="form-control bg-dark text-white border-secondary" id="ipAddress" placeholder="192.168.1.0">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="subnetMask" class="form-label text-white">Subnet Mask</label>
+                        <select class="form-select bg-dark text-white border-secondary" id="subnetMask">
+                            <option value="8">/8 (255.0.0.0)</option>
+                            <option value="16">/16 (255.255.0.0)</option>
+                            <option value="24" selected>/24 (255.255.255.0)</option>
+                            <option value="25">/25 (255.255.255.128)</option>
+                            <option value="26">/26 (255.255.255.192)</option>
+                            <option value="27">/27 (255.255.255.224)</option>
+                            <option value="28">/28 (255.255.255.240)</option>
+                            <option value="29">/29 (255.255.255.248)</option>
+                            <option value="30">/30 (255.255.255.252)</option>
+                            <option value="31">/31 (255.255.255.254)</option>
+                            <option value="32">/32 (255.255.255.255)</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="calculateBtn">Calculate</button>
+            </div>
+        </div>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <h3 class="text-white mb-4">Results</h3>
+                <div id="results">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/subnet-calculator.js"></script>
+</body>
+</html> 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator - Cyber Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="sidebar-toggle">
+                <i class="bi bi-window"></i>
+            </button>
+            <a class="navbar-brand" href="/">Cyber Tools</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNav">
+                <div class="ms-auto">
+                    <a class="btn btn-primary" href="/pages/donate.html">Donate</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar"></div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1 style="color: #00ff9d;">Hash Generator</h1>
+        <p style="color: #adb5bd;">Generate various hash types from text input.</p>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label text-white">Input Text</label>
+                        <textarea class="form-control bg-dark text-white border-secondary" id="input" rows="3" placeholder="Enter text to hash"></textarea>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label text-white">Hash Type</label>
+                        <select class="form-select bg-dark text-white border-secondary mb-2" id="hashType">
+                            <option value="MD5">MD5</option>
+                            <option value="SHA-1">SHA-1</option>
+                            <option value="SHA-256" selected>SHA-256</option>
+                            <option value="SHA-384">SHA-384</option>
+                            <option value="SHA-512">SHA-512</option>
+                        </select>
+                        <button class="btn btn-primary w-100" id="generateBtn">Generate Hash</button>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <label class="form-label text-white">Hash Output</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-dark text-white border-secondary" id="output" readonly>
+                        <button class="btn btn-primary" id="copyBtn">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <h3 class="text-white">Hash Information</h3>
+                <div class="table-responsive">
+                    <table class="table table-dark table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Hash Type</th>
+                                <th>Length</th>
+                                <th>Common Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MD5</td>
+                                <td>32 characters</td>
+                                <td>File checksums (Not recommended for security)</td>
+                            </tr>
+                            <tr>
+                                <td>SHA-1</td>
+                                <td>40 characters</td>
+                                <td>Legacy systems (Not recommended for security)</td>
+                            </tr>
+                            <tr>
+                                <td>SHA-256</td>
+                                <td>64 characters</td>
+                                <td>Modern security applications</td>
+                            </tr>
+                            <tr>
+                                <td>SHA-384</td>
+                                <td>96 characters</td>
+                                <td>Enhanced security requirements</td>
+                            </tr>
+                            <tr>
+                                <td>SHA-512</td>
+                                <td>128 characters</td>
+                                <td>Maximum security requirements</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/hash-generator.js"></script>
+</body>
+</html> 

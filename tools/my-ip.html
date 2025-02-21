@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My IP - Cyber Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="sidebar-toggle">
+                <i class="bi bi-window"></i>
+            </button>
+            <a class="navbar-brand" href="/">Cyber Tools</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNav">
+                <div class="ms-auto">
+                    <a class="btn btn-primary" href="/pages/donate.html">Donate</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar"></div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1 style="color: #00ff9d;">My IP Address</h1>
+        <p style="color: #adb5bd;">Find your current public IP address and connection details.</p>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="text-white mb-4">Your Public IP Address</h2>
+                        <div id="ipAddress" class="display-4 text-white mb-4">Loading...</div>
+                        <button class="btn btn-primary" id="refreshBtn">
+                            <i class="bi bi-arrow-clockwise"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <h3 class="text-white mb-4">Connection Details</h3>
+                <div id="details">
+                    <!-- Details will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/my-ip.js"></script>
+</body>
+</html> 

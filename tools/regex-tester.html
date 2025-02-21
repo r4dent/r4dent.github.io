@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Tester - Cyber Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="sidebar-toggle">
+                <i class="bi bi-window"></i>
+            </button>
+            <a class="navbar-brand" href="/">Cyber Tools</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNav">
+                <div class="ms-auto">
+                    <a class="btn btn-primary" href="/pages/donate.html">Donate</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar"></div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1 style="color: #00ff9d;">Regex Tester</h1>
+        <p style="color: #adb5bd;">Test and validate regular expressions with real-time matching.</p>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label class="form-label text-white">Regular Expression</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark text-white border-secondary">/</span>
+                            <input type="text" class="form-control bg-dark text-white border-secondary" id="regexInput" placeholder="Enter regex pattern">
+                            <span class="input-group-text bg-dark text-white border-secondary">/</span>
+                            <input type="text" class="form-control bg-dark text-white border-secondary" id="flagsInput" placeholder="flags" style="max-width: 100px;">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label text-white">Quick Test</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-dark text-white border-secondary" id="quickTest" placeholder="Quick test string">
+                            <span class="input-group-text bg-dark border-secondary">
+                                <i id="quickTestResult" class="bi"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label text-white">Test Text</label>
+                        <textarea class="form-control bg-dark text-white border-secondary" 
+                                id="testInput" 
+                                rows="10" 
+                                placeholder="Enter text to test against the regex..."></textarea>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <div class="card bg-dark border-secondary">
+                            <div class="card-body">
+                                <h5 class="text-white">Matches <span id="matchCount" class="badge bg-primary">0</span></h5>
+                                <div id="matches" class="font-monospace text-white-50">
+                                    <!-- Matches will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <h3 class="text-white">Common Flags</h3>
+                <div class="table-responsive">
+                    <table class="table table-dark table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Flag</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>g</td>
+                                <td>Global search (find all matches)</td>
+                            </tr>
+                            <tr>
+                                <td>i</td>
+                                <td>Case-insensitive search</td>
+                            </tr>
+                            <tr>
+                                <td>m</td>
+                                <td>Multiline mode (^ and $ match start/end of lines)</td>
+                            </tr>
+                            <tr>
+                                <td>s</td>
+                                <td>Dot matches newline characters</td>
+                            </tr>
+                            <tr>
+                                <td>u</td>
+                                <td>Unicode mode</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-dark mt-4">
+            <div class="card-body">
+                <h3 class="text-white">Common Examples</h3>
+                <div class="table-responsive">
+                    <table class="table table-dark table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Pattern</th>
+                                <th>Description</th>
+                                <th>Example Matches</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$</td>
+                                <td>Email address validation</td>
+                                <td>user@example.com, name.surname@domain.co.uk</td>
+                            </tr>
+                            <tr>
+                                <td>^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$</td>
+                                <td>Password with minimum 8 characters, at least one letter and one number</td>
+                                <td>pass1234, myPassword789</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/regex-tester.js"></script>
+</body>
+</html> 
