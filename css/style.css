@@ -41,7 +41,7 @@ body {
     top: 48px;
     left: 0;
     bottom: 0;
-    width: 265px;
+    width: 48px;
     transition: width 0.3s ease;
     padding: 0;
     margin: 0;
@@ -61,14 +61,14 @@ body {
 /* Content positioning */
 .content {
     position: relative;
-    margin-left: 0px;  /* sidebar width (265px) + 50px margin */
+    margin-left: 200px;  /* sidebar width (48px) + 50px margin */
     margin-top: 48px;
     padding: 20px;
     transition: margin-left 0.3s ease;
 }
 
 .content.shifted {
-    margin-left: 0px;  /* collapsed sidebar width (48px) + 50px margin */
+    margin-left: 10px;  /* collapsed sidebar width (48px) + 50px margin */
 }
 
 .sidebar-content {
@@ -127,7 +127,7 @@ body {
 .content {
     position: fixed;
     top: 48px;
-    left: 265px;
+    left: 48px;
     right: 0;
     bottom: 0;
     overflow-y: auto;
